@@ -48,36 +48,22 @@ window.addEventListener("load", () => {
       console.log(`character id : ${id} was deleted`);
     });
 
-  document
-    .getElementById("edit-character-form")
-    .addEventListener("submit", function (event) {
-      //     event.preventDefault();
-      //     let id = document.getElementById("edit-id").value;
-      //     let nameUpdated = document.getElementById("create-one-name").value;
-      //     let occupationUpdated = document.getElementById(
-      //       "create-one-occupation"
-      //     ).value;
-      //     let weaponUpdated = document.getElementById("create-one-weapon").value;
-      //     let cartoonUpdated = document.getElementById("create-one-cartoon").value;
-      //     let characterUpdated = {
-      //       name: nameUpdated,
-      //       occupation: occupationUpdated,
-      //       weapon: weaponUpdated,
-      //       cartoon: cartoonUpdated,
-      //     };
-      //     charactersAPI
-      //       .createOneRegister(newCharacter)
-      //       .then(() => {
-      //         document.querySelector("#create-data").style.backgroundColor =
-      //           "green";
-      //         event.preventDefault();
-      //       })
-      //       .catch(
-      //         (err) =>
-      //           (document.querySelector("#create-data").style.backgroundColor =
-      //             "red")
-      //       );
-      //   });
+    document.getElementById('edit-character-form').addEventListener('submit', function (event) {
+    
+      event.preventDefault()
+  
+      let newCharacterForm = document.getElementById("edit-character-form")
+      let characterId = newCharacterForm.querySelector(".chr-id").value
+      
+      let characterInfo = {
+        name: newCharacterForm.name.value,
+        occupation: newCharacterForm.occupation.value,
+        weapon: newCharacterForm.weapon.value,
+        cartoon: newCharacterForm.cartoon.checked,
+      }
+  
+      charactersAPI.updateOneRegister(characterId, characterInfo)
+  
     });
 
   document
@@ -89,7 +75,7 @@ window.addEventListener("load", () => {
         "create-one-occupation"
       ).value;
       let newWeapon = document.getElementById("create-one-weapon").value;
-      let newCartoon = document.getElementById("create-one-cartoon").value;
+      let newCartoon = document.getElementById("create-one-cartoon").check;
       let newCharacter = {
         name: newName,
         occupation: newOccupation,

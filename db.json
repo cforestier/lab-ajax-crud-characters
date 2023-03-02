@@ -22,10 +22,10 @@
       "cartoon": true
     },
     {
-      "name": "raph",
-      "occupation": "paozjdpaojz",
-      "weapon": "apozjdpazodj",
-      "cartoon": "on",
+      "name": "test",
+      "occupation": "test",
+      "weapon": "test",
+      "cartoon": true,
       "id": 4
     },
     {

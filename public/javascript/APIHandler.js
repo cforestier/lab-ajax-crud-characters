@@ -1,6 +1,9 @@
 class APIHandler {
-  constructor(baseUrl) {
-    this.BASE_URL = baseUrl;
+  constructor (baseURL) {
+    this.api = axios.create({
+      baseURL: baseURL
+    });
+    this.BASE_URL = baseURL;
   }
 
   async getFullList() {
